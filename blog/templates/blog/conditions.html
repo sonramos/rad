@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Exemplo de Condicionais</title>
-</head>
-<body>
+{% extends "blog/base_blog.html" %}
 
+{% block title %}Condicionais{% endblock %}
+
+{% block content %}
     <h2>Exemplo de Condicionais</h2>
 
     <!-- Login -->
@@ -32,5 +29,5 @@
         <p>Função não reconhecida.</p>
     {% endif %}
 
-</body>
-</html>
+{% endblock %}
+

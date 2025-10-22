@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <body>
-        <h1>Olá, {{ usuario }}</h1>
-        <p>Hoje é: {{ data_atual|date:"d/m/Y"}}</p>
-        <p>A data deste momento, no horário GMT, é: {% now "d/m/Y H:i" %}</p>
-        <h2>O dobro de {{ numero }} é {{ numero|add:numero}}</h2>
-    </body>
-</html>
+{% extends "blog/base_blog.html" %}
+
+{% block content %}
+    <h1>Olá, {{ usuario }}</h1>
+    <p>Hoje é: {{ data_atual|date:"d/m/Y"}}</p>
+    <p>A data deste momento, no horário GMT, é: {% now "d/m/Y H:i" %}</p>
+    <h2>O dobro de {{ numero }} é {{ numero|add:numero}}</h2>
+{% endblock %}
