@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo de Condicionais</title>
+</head>
+<body>
+
+    <h2>Exemplo de Condicionais</h2>
+
+    <!-- Login -->
+    {% if is_logged_in %}
+        <p>Bem-vindo de volta!</p>
+    {% else %}
+        <p>Faça login para continuar.</p>
+    {% endif %}
+
+    <!-- Idade -->
+        <span>Idade: {{ age }}. Classificação:</span>
+    {% if age >= 18 %}
+        <span>maior de idade</span>
+    {% else %}
+        <span>menor de idade</span>
+    {% endif %}
+
+    <!-- Role -->
+    {% if role == "admin" %}
+        <p class=>Perfil de usuário: Administrador.</p>
+    {% elif role == "user" %}
+        <p>Perfil de usuário: Usuário comum.</p>
+    {% else %}
+        <p>Função não reconhecida.</p>
+    {% endif %}
+
+</body>
+</html>
