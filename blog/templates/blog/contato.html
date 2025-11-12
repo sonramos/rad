@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Loops{% endblock %}
+
+{% block content %}
+    <h2>Contato Selecionado</h2>
+
+    <p><strong>ID:</strong> {{ contact_number }}</p>
+    <p><strong>Nome:</strong> {{ contato.nome }}</p>
+    <p><strong>Número:</strong> {{ contato.numero }}</p>
+
+    <hr>
+
+    <a href="{% url 'contato' 1 %}">Contato 1</a> |
+    <a href="{% url 'contato' 2 %}">Contato 2</a> |
+    <a href="{% url 'contato' 3 %}">Contato 3</a>
+{% endblock %}

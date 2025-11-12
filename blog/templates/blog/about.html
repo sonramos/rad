@@ -1,0 +1,9 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Sobre{% endblock %}
+
+{% block content %}
+    <h1>Sobre o Projeto</h1>
+    <p>Este é um projeto de estudos com Django, criado para praticar o uso de templates, herança, condicionais e loops.</p>
+    <p>Desenvolvido por {{ usuario|default:"um estudante entusiasmado" }}.</p>
+{% endblock %}
