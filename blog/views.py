@@ -59,3 +59,9 @@ def contato(request, contact_number):
         'contact_number': contact_number
     }
     return render(request, "blog/contato.html", contexto)
+
+def about(request):
+    contexto = {
+        "usuario": "Jackson Ramos"
+    }
+    return render(request, "blog/about.html", contexto)
