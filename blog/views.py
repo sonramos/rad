@@ -36,4 +36,4 @@ def loops(request):
         {'nome': 'Mouse', 'preco': 80},
         {'nome': 'Teclado', 'preco': 150},
     ]}
-    return render(request, 'loops.html', contexto)
+    return render(request, "blog/loops.html", contexto)
