@@ -37,3 +37,25 @@ def loops(request):
         {'nome': 'Teclado', 'preco': 150},
     ]}
     return render(request, "blog/loops.html", contexto)
+
+def home(request):
+    contexto = {
+        "usuario": "sonramos",
+        "data_atual": date.today(),
+    }
+    return render(request, "blog/home.html", contexto)
+
+def contato(request, contact_number):
+    contatos = [
+        {'nome': 'Jackson', 'numero': 83999999999},
+        {'nome': 'Edemberg', 'numero': 83988888888},
+        {'nome': 'Cândido', 'numero': 83977777777},
+    ]
+
+    contato_selecionado = contatos[contact_number - 1]
+
+    contexto = {
+        'contato': contato_selecionado,
+        'contact_number': contact_number
+    }
+    return render(request, "blog/contato.html", contexto)
