@@ -1,0 +1,4 @@
+# ---- Banco de dados SQLite ----
+db.sqlite3
+db.sqlite3-journal
+*.sqlite3
