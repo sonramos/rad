@@ -1,6 +1,30 @@
 {% extends "blog/base.html" %}
 
+{% block title %}Início{% endblock %}
+
 {% block content %}
-    <h1>Olá, {{ usuario }}</h1>
-    <p>Hoje é: {{ data_atual|date:"d/m/Y"}}</p>
+
+<h1 class="mb-4">Bem-vindo, {{ usuario }}!</h1>
+
+<p class="text-muted">Hoje é: {{ data_atual|date:"d/m/Y" }}</p>
+
+<h2 class="mt-4 mb-3">Últimos Posts</h2>
+
+<div class="row">
+
+    {% for post in posts %}
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">{{ post.titulo }}</h5>
+                <p class="card-text text-muted">{{ post.autor }} — {{ post.data }}</p>
+                <p class="card-text">{{ post.descricao }}</p>
+                <a href="#" class="btn btn-primary btn-sm">Ler mais</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
 {% endblock %}

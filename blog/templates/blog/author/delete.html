@@ -1,0 +1,16 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Excluir{% endblock %}
+
+{% block content %}
+<h1>Excluir Autor</h1>
+
+<p>Tem certeza que deseja excluir <strong>{{ author.name }}</strong>?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger">Sim, excluir</button>
+    <a href="{% url 'author_list' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+
+{% endblock %}

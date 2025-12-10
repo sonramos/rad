@@ -1,0 +1,30 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Autores{% endblock %}
+
+{% block content %}
+
+<h1 class="mb-4">Autores</h1>
+
+<div class="row">
+    {% for author in authors %}
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">{{ author.name }}</h5>
+
+                <div class="d-flex gap-2">
+                    <a href="{% url 'author_detail' author.id %}" class="btn btn-primary btn-sm">Ver</a>
+                    <a href="{% url 'author_update' author.id %}" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="{% url 'author_delete' author.id %}" class="btn btn-danger btn-sm">Excluir</a>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p class="text-muted">Nenhum autor cadastrado.</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

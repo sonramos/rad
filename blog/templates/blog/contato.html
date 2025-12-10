@@ -1,17 +1,30 @@
 {% extends "blog/base.html" %}
 
-{% block title %}Loops{% endblock %}
+{% block title %}Contato{% endblock %}
 
 {% block content %}
-    <h2>Contato Selecionado</h2>
 
+<h2 class="mb-4">Contato Selecionado</h2>
+
+<div class="card shadow-sm p-3">
     <p><strong>ID:</strong> {{ contact_number }}</p>
     <p><strong>Nome:</strong> {{ contato.nome }}</p>
     <p><strong>Número:</strong> {{ contato.numero }}</p>
+</div>
 
-    <hr>
+<hr>
 
-    <a href="{% url 'contato' 1 %}">Contato 1</a> |
-    <a href="{% url 'contato' 2 %}">Contato 2</a> |
-    <a href="{% url 'contato' 3 %}">Contato 3</a>
+<h4 class="mt-4">Outros contatos</h4>
+
+<ul class="list-group mt-3">
+    {% for c in contatos %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{ c.nome }}
+        <a href="{% url 'contato' forloop.counter %}" class="btn btn-outline-primary btn-sm">
+            Ver contato
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+
 {% endblock %}

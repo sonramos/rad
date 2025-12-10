@@ -1,0 +1,52 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Detalhes do Livro{% endblock %}
+
+{% block content %}
+
+<h1 class="mb-4">Detalhes do Livro</h1>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+
+        <h3 class="card-title">{{ book.title }}</h3>
+
+        <p class="text-muted mb-1">
+            <strong>ISBN:</strong> {{ book.isbn }}
+        </p>
+
+        <p class="text-muted mb-1">
+            <strong>Data de lançamento:</strong> {{ book.release_date|date:"d/m/Y" }}
+        </p>
+
+        <p class="text-muted mb-1">
+            <strong>Preço:</strong> R$ {{ book.price }}
+        </p>
+
+        <p class="text-muted mb-3">
+            <strong>Estoque:</strong> {{ book.stock }} unidades
+        </p>
+
+        <p class="mb-3">
+            <strong>Editora:</strong> {{ book.publisher.name }}
+        </p>
+
+        <p>
+            <strong>Autores:</strong><br>
+            {% for author in book.authors.all %}
+                {{ author.name }}{% if not forloop.last %}, {% endif %}
+            {% empty %}
+                <span class="text-muted">Nenhum autor cadastrado.</span>
+            {% endfor %}
+        </p>
+
+        <div class="mt-4 d-flex gap-2">
+            <a href="{% url 'book_update' book.id %}" class="btn btn-warning btn-sm">Editar</a>
+            <a href="{% url 'book_delete' book.id %}" class="btn btn-danger btn-sm">Excluir</a>
+            <a href="{% url 'book_list' %}" class="btn btn-secondary btn-sm">Voltar</a>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Editoras{% endblock %}
+
+{% block content %}
+
+<h1 class="mb-4">Editoras</h1>
+
+<div class="row">
+    {% for publisher in publishers %}
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">{{ publisher.name }}</h5>
+
+                <div class="d-flex gap-2">
+                    <a href="{% url 'publisher_detail' publisher.id %}" class="btn btn-primary btn-sm">Ver</a>
+                    <a href="{% url 'publisher_update' publisher.id %}" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="{% url 'publisher_delete' publisher.id %}" class="btn btn-danger btn-sm">Excluir</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p class="text-muted">Nenhuma editora cadastrada.</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

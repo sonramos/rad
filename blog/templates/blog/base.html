@@ -1,13 +1,23 @@
 {% extends "base.html" %}
 
-{% block title %}My Blog{% endblock %}
+{% block title %}Início{% endblock %}
 
-{% block sidebar %}
-    <ul>
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'contato' 1 %}">Ver Contato 1</a></li>
-        <li><a href="{% url 'about' %}">Sobre</a></li>
-        <li><a href="/blog/conditions">Condicionais</a></li>
-        <li><a href="/blog/loops">Loops</a></li>
-    </ul>
+{% block navitems_app %}
+
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'book_list' %}">Livros</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'author_list' %}">Autores</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'publisher_list' %}">Editoras</a>
+    </li>
+
+{% endblock %}
+
+{% block content %}
+
 {% endblock %}

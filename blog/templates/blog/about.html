@@ -3,7 +3,18 @@
 {% block title %}Sobre{% endblock %}
 
 {% block content %}
-    <h1>Sobre o Projeto</h1>
-    <p>Este é um projeto de estudos com Django, criado para praticar o uso de templates, herança, condicionais e loops.</p>
-    <p>Desenvolvido por {{ usuario|default:"um estudante entusiasmado" }}.</p>
+
+<h1 class="mb-4">Sobre o Blog</h1>
+
+<div class="card shadow-sm p-3">
+    <p>
+        Este blog foi criado para estudos com Django,
+        praticando templates, herança, loops, CRUDs e estilização moderna.
+    </p>
+
+    <p>
+        Desenvolvido por <strong>{{ usuario }}</strong>.
+    </p>
+</div>
+
 {% endblock %}
